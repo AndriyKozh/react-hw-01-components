@@ -5,7 +5,7 @@ function Friend(props) {
   return (
     <div>
       {isOnline ? <div>red</div> : <div>green</div>}
-      <img src={avatar} alt="Photo" />
+      <img src={avatar} alt="User avatar" width="48" />
       <h2> {name}</h2>
     </div>
   );
