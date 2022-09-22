@@ -12,3 +12,9 @@ function Friend(props) {
 }
 
 export default Friend;
+
+Friend.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  isOnline: PropTypes.bool,
+};

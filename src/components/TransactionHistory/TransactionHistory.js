@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
+
 function TransactionHistory({ items }) {
-  const { id, type, amount, currency } = items;
   return (
-    <table class="transaction-history">
+    <table>
       <thead>
         <tr>
           <th>Type</th>
@@ -24,4 +25,16 @@ function TransactionHistory({ items }) {
     </table>
   );
 }
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+    })
+  ),
+};
+
 export default TransactionHistory;
