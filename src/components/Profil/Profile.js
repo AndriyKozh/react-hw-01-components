@@ -6,7 +6,7 @@ function Profile(props) {
   return (
     <div className="component">
       <div>
-        <img src={avatar} alt="User avatar" className="avatar" />
+        <img src={avatar} alt="User avatar" />
         <p className="name">{username}</p>
         <p className="tag">{tag}</p>
         <p className="location">{location}</p>
@@ -35,7 +35,6 @@ Profile.propTypes = {
   username: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
-  avatar: PropTypes.string,
   stats: PropTypes.object,
 };
 
