@@ -13,7 +13,7 @@ export const App = () => {
     <div
       style={{
         display: 'flex',
-        justifyContent: 'space-between',
+
         justifyContent: 'center',
         alignItems: 'center',
       }}
