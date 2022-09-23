@@ -1,32 +1,42 @@
 import PropTypes from 'prop-types';
-
+import {
+  Card,
+  Photo,
+  InfoContent,
+  UserName,
+  TagLocation,
+  ProfilItem,
+  Profillist,
+  RatingTitl,
+  Rating,
+} from './Profil.style';
 function Profile(props) {
   const { username, tag, location, avatar, stats } = props;
 
   return (
-    <div className="component">
-      <div>
-        <img src={avatar} alt="User avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <Card>
+      <InfoContent>
+        <Photo src={avatar} alt="User avatar" />
+        <UserName>{username}</UserName>
+        <TagLocation>{tag}</TagLocation>
+        <TagLocation>{location}</TagLocation>
+      </InfoContent>
 
-      <ul className="stats">
-        <li>
-          <span>Followers</span>
-          <span>{stats.followers}</span>
-        </li>
-        <li>
-          <span>Views</span>
-          <span>{stats.views}</span>
-        </li>
-        <li>
-          <span>Likes</span>
-          <span>{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <ProfilItem>
+        <Profillist>
+          <RatingTitl>Followers</RatingTitl>
+          <Rating>{stats.followers}</Rating>
+        </Profillist>
+        <Profillist>
+          <RatingTitl>Views</RatingTitl>
+          <Rating>{stats.views}</Rating>
+        </Profillist>
+        <Profillist>
+          <RatingTitl>Likes</RatingTitl>
+          <Rating>{stats.likes}</Rating>
+        </Profillist>
+      </ProfilItem>
+    </Card>
   );
 }
 

@@ -1,19 +1,26 @@
 import PropTypes from 'prop-types';
-
+import {
+  Card,
+  StatisticContent,
+  Title,
+  StatisticList,
+  StatisticItem,
+} from './Statistic.style';
 function Statistics({ stats, title }) {
   return (
-    <section>
-      {title && <h1>{title}</h1>}
-
-      {stats.map(stat => {
-        return (
-          <ul key={stat.id}>
-            <li>{stat.label}</li>
-            <li>{stat.percentage}</li>
-          </ul>
-        );
-      })}
-    </section>
+    <Card>
+      {title && <Title>{title}</Title>}
+      <StatisticContent>
+        {stats.map(stat => {
+          return (
+            <StatisticList key={stat.id}>
+              <StatisticItem>{stat.label}%</StatisticItem>
+              <StatisticItem>{stat.percentage}%</StatisticItem>
+            </StatisticList>
+          );
+        })}
+      </StatisticContent>
+    </Card>
   );
 }
 

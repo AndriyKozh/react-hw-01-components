@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-
+import { Card, Online, NotOnline, Avatar } from './Friends.style';
 function Friend(props) {
   const { avatar, name, isOnline } = props;
   return (
-    <div>
-      {isOnline ? <div>red</div> : <div>green</div>}
-      <img src={avatar} alt="User avatar" width="48" />
+    <Card>
+      {isOnline ? <Online></Online> : <NotOnline></NotOnline>}
+      <Avatar src={avatar} alt="User avatar" width="48" />
       <h2> {name}</h2>
-    </div>
+    </Card>
   );
 }
 
