@@ -1,11 +1,17 @@
 import Friend from './Friend';
-import friends from './friends';
 
-function FriendList() {
+function FriendList({ friends }) {
   return (
     <div>
       {friends.map(friend => {
-        return <Friend key={friend.id} {...friend} />;
+        return (
+          <Friend
+            key={friend.id}
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+          />
+        );
       })}
     </div>
   );

@@ -1,20 +1,25 @@
 import PropTypes from 'prop-types';
 import { Card, Online, NotOnline, Avatar } from './Friends.style';
-function Friend(props) {
-  const { avatar, name, isOnline } = props;
+
+function Friend({ id, avatar, name, isOnline }) {
   return (
     <Card>
       {isOnline ? <Online></Online> : <NotOnline></NotOnline>}
-      <Avatar src={avatar} alt="User avatar" width="48" />
+      <Avatar src={avatar} alt="User avatar" />
       <h2> {name}</h2>
     </Card>
   );
 }
 
-export default Friend;
-
 Friend.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
+  props: PropTypes.arrayOf(
+    PropTypes.exact({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
 };
+
+export default Friend;
